@@ -35,13 +35,13 @@ if(isset($_POST['submit'])){
           header("Location: ../sigup.php?signup=username has alredy taken");
           exit();
         }else{
-          //Hasing the password 
+          //Hashing the password 
           $hashPwd = password_hash($pwd , PASSWORD_DEFAULT);
         //Insert the user in data base 
         $sql = "INSERT INTO users (user_first,user_last,user_email,user_uid,user_pwd) VALUES ('$first',$last,'$email,'$uid'
         '$hashPwd');";
         mysqli_query($conn,$sql);
-        header("Location: ../sigup.php?signup=Successfully signed up ");
+        header("Location: ../sigup.php?signup=Success");
         exit();
         }
 
